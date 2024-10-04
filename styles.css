@@ -1,0 +1,108 @@
+/* General Body Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+    background-color: black;
+    overflow: hidden;
+}
+
+/* Background Image Container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* 4.png as Background */
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 390px;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+/* Black Transparent Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black transparent layer */
+    z-index: -1;
+}
+
+/* Main Game Container */
+.container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* More transparency */
+    border-radius: 15px;
+    margin: 50px auto;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff0000; /* Marvel Red */
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+input {
+    width: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #e60000;
+}
+
+/* Scale Text in a Vertical Column */
+.scale {
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #FFD700; /* Gold color for cool look */
+    text-align: left;
+}
+
+.scale p {
+    margin: 5px 0;
+}
+
+/* Hidden Result Section */
+.hidden {
+    display: none;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
