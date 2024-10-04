@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Superhero Student Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <div class="overlay"></div>
+        <img src="4.png" alt="Background Image" class="background-image">
+    </div>
+    <div class="container">
+        <h1>Marvel Superhero Student Game</h1>
+        <p>Answer the questions like a superhero! Let's see your score!</p>
+        <div id="question-container" class="question-container">
+            <p id="question"></p>
+            <div class="scale">
+                <p id="scale"></p>
+            </div>
+            <input type="number" id="answer" min="0" max="10" required>
+            <button id="next-question" onclick="nextQuestion()">Next</button>
+        </div>
+        <div id="result" class="hidden">
+            <h2>Your Result</h2>
+            <p id="percentage"></p>
+            <p id="note"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+          </html>
