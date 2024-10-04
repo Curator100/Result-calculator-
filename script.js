@@ -18,12 +18,14 @@ const questions = [
     }
 ];
 
-// Variables to track the current state of the quiz
-let currentQuestionIndex = 0;
-let totalScore = 0;
+// Total questions limit for the quiz
 const totalQuestions = 10;
 
-// Get HTML elements
+// Track the current question and total score
+let currentQuestionIndex = 0;
+let totalScore = 0;
+
+// Get elements
 const questionElement = document.getElementById('question');
 const scaleElement = document.getElementById('scale');
 const answerElement = document.getElementById('answer');
@@ -31,22 +33,28 @@ const resultContainer = document.getElementById('result');
 const percentageDisplay = document.getElementById('percentage');
 const noteDisplay = document.getElementById('note');
 
-// Show the current question
+// Show the first question
 function showQuestion() {
+    // Reset the answer box
+    answerElement.value = '';
+
+    // Display the question and scale
     questionElement.textContent = questions[currentQuestionIndex].question;
     scaleElement.textContent = questions[currentQuestionIndex].scale.replace(/\n/g, '\n');
-    answerElement.value = '';  // Clear the input field for the next question
 }
 
-// Move to the next question when the user clicks 'Next'
+// Move to the next question
 function nextQuestion() {
     const answer = parseInt(answerElement.value);
 
+    // Validate input
     if (answer >= 0 && answer <= 10) {
+        // Add to the total score
         totalScore += answer;
         currentQuestionIndex++;
 
-        if (currentQuestionIndex < totalQuestions) {
+        // If there are more questions, show the next one
+        if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
             calculateResult();
@@ -56,14 +64,13 @@ function nextQuestion() {
     }
 }
 
-// Calculate and display the final result
+// Calculate the final score and show the result
 function calculateResult() {
-    // Calculate the percentage
-    const percentage = (totalScore / (totalQuestions * 10)) * 100;
+    const percentage = (totalScore / (questions.length * 10)) * 100;
 
     percentageDisplay.textContent = `Your score is: ${percentage.toFixed(2)}%`;
 
-    // Fun notes based on the percentage
+    // Fun note based on the result
     let note = '';
     if (percentage >= 90) {
         note = "You're a superhero in your studies!";
@@ -77,10 +84,10 @@ function calculateResult() {
 
     noteDisplay.textContent = note;
 
-    // Show the result section and hide the question section
+    // Show result and hide question container
     resultContainer.classList.remove('hidden');
     document.getElementById('question-container').classList.add('hidden');
 }
 
-// Start the game by showing the first question
+// Start the quiz
 showQuestion();
